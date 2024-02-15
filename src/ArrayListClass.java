@@ -1,0 +1,65 @@
+import java.util.*;
+import java.util.stream.Stream;
+
+public class ArrayListClass {
+    public static void main(String[] args) {
+        List<String> list = new ArrayList<>();
+        List<String> list2 = new ArrayList<>(20);
+        List<String> list3 = new ArrayList<>(list);
+        list.add("Gulnar1");
+        list.add("Gulnar2");
+        list.add("Gulnar3");
+        System.out.println(list);
+        System.out.println(list.size());
+        list.add(0, "Gulnar0");
+        System.out.println("add Gulnar0" + list);
+        System.out.println("list 2 before: " + list2);
+        list2.addAll(list);
+        System.out.println("list 2 after add: " + list2);
+        list2.addAll(1, list2);
+        System.out.println("list 2 after add second : " + list2);
+        list.addFirst("1");
+        list.add("1");
+        list.addLast("sonuncu element");
+        System.out.println(list);
+        System.out.println(list.contains("1"));
+        System.out.println(list);
+        System.out.println(list2);
+        System.out.println(list2.containsAll(list));
+        System.out.println(list.get(0));
+        System.out.println(list.hashCode());
+        System.out.println(list.equals(list2));
+        System.out.println(list.getFirst());
+        System.out.println(list.getLast());
+        System.out.println(list.indexOf("1"));
+        System.out.println(list.indexOf("fdfg1"));
+        System.out.println(list.lastIndexOf("1"));
+        System.out.println(list.isEmpty());
+        System.out.println(list3.isEmpty());
+        System.out.println(list2);
+        System.out.println(list2.remove(0));
+        System.out.println(list2.remove("Gulnar1"));
+        System.out.println(list2);
+        //list2.removeAll(list);
+        System.out.println(list);
+        list.replaceAll(element -> element.equals("Gulnar0") ? element : "testtt");
+        System.out.println("list" + list);
+        System.out.println(list2);
+        list.retainAll(list2);
+        System.out.println(list);
+        System.out.println(list2);
+        list3 = list2.reversed();
+        System.out.println(list3);
+        list2.set(1, "dataa");
+        System.out.println(list2);
+        Collections.sort(list3);
+        System.out.println(list3);
+        list = list3.subList(1, 3);
+        System.out.println(list);
+        Object[] array = list.toArray();
+        String[] array1 = list.toArray(new String[list.size()]);
+        System.out.println(Arrays.toString(array1));
+        list.removeIf(element -> element.equals("Gulnar2"));
+        System.out.println(list);
+    }
+}
